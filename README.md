@@ -1,1 +1,1 @@
-Silex ContextAware
+A tiny contexts holder for Silex applications
