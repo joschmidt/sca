@@ -140,8 +140,7 @@ class ContextAware implements \ArrayAccess
      * \ArrayAccess::offsetSet()
      * 
      * @see \ArrayAccess::offsetSet()
-     * @throws \Exception In an attempt to add new keys or change the values of
-     * 				existing keys.
+     * @throws \Exception In an attempt to add new keys or change the values of existing keys.
      */
     public function offsetSet($key, $value)
     {
