@@ -11,11 +11,11 @@
  * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 namespace App;
@@ -124,6 +124,7 @@ class ContextAware implements \ArrayAccess
      * \ArrayAccess::offsetGet()
      * 
      * @see \ArrayAccess::offsetGet()
+     * @throws \InvalidArgumentException If the key is unknown.
      */
     public function offsetGet($key)
     {
@@ -139,7 +140,8 @@ class ContextAware implements \ArrayAccess
      * \ArrayAccess::offsetSet()
      * 
      * @see \ArrayAccess::offsetSet()
-     * @throws \Exception 
+     * @throws \Exception In an attempt to add new keys or change the values of
+     * 				existing keys.
      */
     public function offsetSet($key, $value)
     {
@@ -150,7 +152,7 @@ class ContextAware implements \ArrayAccess
      * \ArrayAccess::offsetUnset()
      * 
      * @see \ArrayAccess::offsetUnset()
-     * @throws \Exception 
+     * @throws \Exception In an attempt to unset a key.
      */
     public function offsetUnset($key)
     {
