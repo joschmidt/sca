@@ -23,7 +23,7 @@ namespace App;
 use Silex\Application;
 
 /**
- * Provides a contexts holder for Silex.
+ * Provides a contexts holder for Silex applications.
  * 
  * Contexts are useful e.g. for safely control application behavior in 
  * functional and/or unit tests.
