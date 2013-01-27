@@ -84,6 +84,13 @@ class ContextAwareTest extends \PHPUnit_Framework_TestCase
         } catch (\Exception $e) {
             $this->assertTrue($e instanceof \Exception);
         }
+        
+        try {
+            $contextAware['foo'] = 'bar';
+            $this->fail();
+        } catch (\Exception $e) {
+            $this->assertTrue($e instanceof \Exception);
+        }
     }
     
     public function testOffsetUnset()
