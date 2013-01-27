@@ -1,1 +1,1 @@
-A tiny contexts holder for Silex applications (http://silex.sensiolabs.org/)
+Silex ContextAware - a tiny contexts holder for Silex applications (http://silex.sensiolabs.org/)
