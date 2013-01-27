@@ -2,20 +2,20 @@
 /**
  * A tiny contexts holder for Silex applications.
  * 
- * Copyright (C) 2013 Johannes Schmidt
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
+ * Copyright (C) 2013 Johannes Schmidt <joschmidt@users.sourceforge.net>
+ * 
+ * This library is free software; you can redistribute it and/or modify 
+ * it under the terms of the GNU Lesser General Public License as published by 
+ * the Free Software Foundation; either version 3 of the License, or 
  * (at your option) any later version.
  * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * This library is distributed in the hope that it will be useful, 
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+ * GNU Lesser General Public License for more details.
+ *  
+ * You should have received a copy of the GNU Lesser General Public License 
+ * along with this library; if not, see <https://www.gnu.org/licenses/lgpl.html>.
  */
 
 namespace App;
@@ -25,22 +25,21 @@ use Silex\Application;
 /**
  * Provides a contexts holder for Silex applications.
  * 
- * Contexts are useful e.g. for safely control application behavior in 
+ * Contexts are useful to e.g. safely control application behavior in 
  * functional and/or unit tests.
  * 
  * Get a ContextAware singleton via App\ContextAware::newInstance().
  * A context can be set up then in ContextAware::createApplication() which also 
- * returnes a Silex\Application.
+ * returnes an instance of Silex\Application.
  * 
- * <var>array('test' => true)</var> e.g. defines a context.
+ * ContextAware::createApplication(array('test' => true)) e.g. defines a context.
  * 
- * Shared as e.g. <var>$app['ca']</var> this context can be retrieved by 
- * <var>$app['ca']['test']</var>.
+ * Shared as e.g. $app['ca'] this context can be retrieved by $app['ca']['test'].
  * 
  * Once set up contexts cannot be modified.
  * 
  * @author  Johannes Schmidt <joschmidt@users.sourceforge.net>
- * @license <http://www.gnu.org/licenses/gpl.html> GNU GPL 
+ * @license GNU LGPL <https://www.gnu.org/licenses/lgpl.html>
  */
 class ContextAware implements \ArrayAccess
 {
