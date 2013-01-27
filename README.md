@@ -4,7 +4,7 @@ Silex ContextAware - a tiny contexts holder for Silex applications (see http://s
 
 ## Example usage
 
-Control your application behavior safely in regular and (unit) test mode.
+Allow safe control of your application behavior in regular and (unit) test mode.
 
 Set up a context in your unit test (see also http://silex.sensiolabs.org/doc/testing.html ):
 
@@ -34,6 +34,6 @@ Share ContextAware in your application (index.php):
 	  		return $contextAware;
 		});
 		
-		// get a context
+		// get the unmodifiable context and use it to control your app. behavior 
 		$app['ca']['test'];
 

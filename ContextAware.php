@@ -25,7 +25,7 @@ use Silex\Application;
 /**
  * Provides a contexts holder for Silex applications.
  * 
- * Contexts are useful to e.g. safely control application behavior in 
+ * Contexts are useful to e.g. allow safe control of application behavior in 
  * functional and/or unit tests.
  * 
  * Get a ContextAware singleton via App\ContextAware::newInstance().
