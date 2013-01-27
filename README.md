@@ -33,4 +33,7 @@ Share ContextAware in your application (index.php):
 		$app['ca'] = $app->share(function() use ($contextAware) {
 	  		return $contextAware;
 		});
+		
+		// get a context
+		$app['ca']['test'];
 
