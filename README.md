@@ -10,15 +10,15 @@ Set up a context in your unit test (see also http://silex.sensiolabs.org/doc/tes
 
 		public function createApplication()
 		{
-				$contextAware = ContextAware::newInstance();
-				$contextAware->setContext(array('test' => true));
-			    
-				require __DIR__ . '/../../web/index.php';
-			    
-				$app['debug'] = true;
-				$app['exception_handler']->disable();
-			    
-				return $app;
+			$contextAware = ContextAware::newInstance();
+			$contextAware->setContext(array('test' => true));
+		    
+			require __DIR__ . '/../../web/index.php';
+		    
+			$app['debug'] = true;
+			$app['exception_handler']->disable();
+		    
+			return $app;
 		}
   
 Share ContextAware in your application (index.php):
