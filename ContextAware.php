@@ -29,12 +29,10 @@ use Silex\Application;
  * functional and/or unit tests.
  * 
  * Get a ContextAware singleton via App\ContextAware::newInstance().
- * A context can be set up then in ContextAware::createApplication() which also 
- * returnes an instance of Silex\Application.
+ * A context can be set up then in ContextAware::setContext().
  * 
- * ContextAware::createApplication(array('test' => true)) e.g. defines a context.
- * 
- * Shared as e.g. $app['ca'] this context can be retrieved by $app['ca']['test'].
+ * ContextAware::setContext(array('test' => true)) e.g. defines a context.
+ * If shared as e.g. $app['ca'] this context can be retrieved by $app['ca']['test'].
  * 
  * Once set up contexts cannot be modified.
  * 
@@ -51,13 +49,6 @@ class ContextAware implements \ArrayAccess
     private static $_instance = null;
     
     /**
-     * Holds an instance of Silex\Application.
-     * 
-     * @var Silex\Application
-     */
-    private $_app;
-    
-    /**
      * Holds the unmodifiable contexts.
      * 
      * @var array
@@ -72,7 +63,6 @@ class ContextAware implements \ArrayAccess
     private function __construct()
     {
         self::$_instance = $this;
-        $this->_app = null;
         $this->_values = array();
     }
     
@@ -89,23 +79,19 @@ class ContextAware implements \ArrayAccess
     }
     
     /**
-     * Registers contexts and returns an instance of Silex\Application.
-     * If an instance has already been created at runtime that instance 
-     * is returned. 
-     * New contexts will be added.
+     * Registers contexts.
+     * New contexts will be appended, existing ones will be preserved.
      * 
      * @param array $values The contexts.
      * 
-     * @return Silex\Application An instance of Silex\Application.
+     * @return void
      */
-    public function createApplication(array $values = array())
+    public function setContext(array $values = array())
     {
-        if (is_null($this->_app)) {
+        if (empty($this->_values)) {
             $this->_values = $values;
-            return $this->_app = new Application();
         } else {
             $this->_values = $this->_values + $values;
-            return $this->_app; 
         }
     }
     
