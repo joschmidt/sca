@@ -34,6 +34,6 @@ Share ContextAware in your application (index.php):
 	  		return $contextAware;
 		});
 		
-		// get the unmodifiable context and use it to control your app. behavior 
+		// get an unmodifiable context and use it to control your app. behavior 
 		$app['ca']['test'];
 
