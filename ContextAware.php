@@ -20,8 +20,6 @@
 
 namespace App;
 
-use Silex\Application;
-
 /**
  * Provides a contexts holder for Silex applications.
  * 
