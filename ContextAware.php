@@ -37,7 +37,7 @@ namespace App;
  * @author  Johannes Schmidt <joschmidt@users.sourceforge.net>
  * @license GNU LGPL <https://www.gnu.org/licenses/lgpl.html>
  */
-class ContextAware implements \ArrayAccess
+final class ContextAware implements \ArrayAccess
 {
     /**
      * Holds an instance of App\ContextAware.
@@ -63,6 +63,14 @@ class ContextAware implements \ArrayAccess
         self::$_instance = $this;
         $this->_values = array();
     }
+    
+    /**
+     * Clones an instance.
+     * Declared private to prevent cloning from outside.
+     * 
+     * @return void
+     */
+    private function __clone() {}
     
     /**
      * Returns the singleton instance.
