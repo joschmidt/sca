@@ -39,4 +39,4 @@ Share ContextAware in your application (index.php):
 
 ## License
 
-See LICENSE
+Released under the MIT License, see also LICENSE
