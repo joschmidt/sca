@@ -35,7 +35,7 @@ namespace App;
  * Once set up contexts cannot be modified.
  * 
  * @author  Johannes Schmidt <joschmidt@users.sourceforge.net>
- * @license GNU LGPL <https://www.gnu.org/licenses/lgpl.html>
+ * @license MIT <http://opensource.org/licenses/MIT>
  */
 final class ContextAware implements \ArrayAccess
 {
